@@ -17,8 +17,12 @@ The `proxy` option is a URL string that specifies the proxy server. It can inclu
 
 ---
 
-You can also set the `$HTTP_PROXY` or `$HTTPS_PROXY` environment variable to the proxy URL. This is useful when you want to use the same proxy for all requests.
+You can also set the `$HTTPS_PROXY` environment variable to the proxy URL, either HTTPS or HTTP. This is useful when you want to use the same proxy for all requests.
 
 ```sh
+# HTTPS upstream proxy
 HTTPS_PROXY=https://username:password@proxy.example.com:8080 bun run index.ts
+
+# ... plain HTTP works too!
+HTTPS_PROXY=http://username:password@proxy.example.com:8080 bun run index.ts
 ```
